@@ -10,14 +10,29 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  function matriz(){
+  console.log(Object.entries(objeto))
+}
+
 }
 
 
 function numberOfCharacters(string) {
-  //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
+  //La función recibe un string. Recorre el string y devuelve el caracter con el número de veces que aparece 
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+
+  var conteo = {};
+
+  for (var i = 0; i<string.length; i++) {
+    if( !conteo[string[i]]){
+      conteo[string[i]] = 0;
+    }
+    conteo[string[i]]+=1;
+  }
+  return conteo;
+
 }
 
 
@@ -26,6 +41,18 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+
+  var mayuscula = '';
+    var minuscula = '';
+    for (i = 0; i<s.length; i++){ 
+       if(s[i] === s[i].toUpperCase()){ 
+            mayuscula = mayuscula + s[i]; 
+         }
+     else {
+            minuscula = minuscula + s[i];
+          } 
+     }       
+    return (mayuscula + minuscula) 
 }
 
 
@@ -35,6 +62,9 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+
+  
+
 } 
 
 
@@ -83,4 +113,3 @@ module.exports = {
    sortArray,
    buscoInterseccion,
 };
-
